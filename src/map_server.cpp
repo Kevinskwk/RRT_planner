@@ -65,7 +65,7 @@ class MapServer
       std::string frame_id;
       ros::NodeHandle private_nh("~");
       private_nh.param("frame_id", frame_id, std::string("map"));
-      private_nh.param("negate", negate, 1);
+      private_nh.param("negate", negate, 0);
       private_nh.param("occupied_thresh", occ_th, 0.65);
       private_nh.param("free_thresh", free_th, 0.196);
 
