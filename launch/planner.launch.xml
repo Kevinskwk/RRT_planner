@@ -1,0 +1,10 @@
+<launch>
+  <arg name="map" default="$(find rrt_planner)/maps/test.png" />
+  <arg name="res" default="1.0" />
+  <arg name="goal_bias" default="0.2" />
+  <arg name="delta" default="1.0" />
+
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find rrt_planner)/launch/include/config.rviz" />
+  <node type="map_server" name="map_server" pkg="rrt_planner" args="$(arg map) $(arg res)" />
+  <node type="planner" name="planner" pkg="rrt_planner" args="$(arg goal_bias) $(arg delta)" output="screen"/>
+</launch>
